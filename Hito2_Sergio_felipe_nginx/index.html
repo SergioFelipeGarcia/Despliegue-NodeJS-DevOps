@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruebas de Visualización</title>
+</head>
+<body>
+        <h2>En Nginx</h2>
+    <!-- Contenedor para la imagen -->
+    <div id="imagenContainer">
+        <img id="imagen" src="img/descarga.png" alt="Imagen de prueba">
+    </div>
+
+    <!-- Contenedor para el vídeo -->
+    <div id="videoContainer">
+        <video id="video" width="320" height="240" controls>
+            <source src="Taekwondo.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+    </div>
+
+    <script>
+        // Verificar la carga y visualización de la imagen
+        const imagen = document.getElementById('imagen');
+        imagen.onload = function() {
+            console.log('La imagen se ha cargado correctamente.');
+            // Puedes agregar aquí más pruebas o acciones según sea necesario
+        };
+        imagen.onerror = function() {
+            console.error('Error al cargar la imagen.');
+        };
+
+        // Verificar la carga y reproducción del vídeo
+        const video = document.getElementById('video');
+        video.oncanplaythrough = function() {
+            console.log('El vídeo se ha cargado y puede reproducirse sin interrupciones.');
+            // Puedes agregar aquí más pruebas o acciones según sea necesario
+        };
+        video.onerror = function() {
+            console.error('Error al cargar el vídeo.');
+        };
+    </script>
+
+</body>
+</html>
